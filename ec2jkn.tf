@@ -42,8 +42,6 @@ tags = {
 </powershell>
 EOF
 }
-
-}
 # Output the public IP address of the instance
 
   output "public_ip" {
