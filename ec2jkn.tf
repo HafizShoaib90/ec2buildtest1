@@ -35,17 +35,6 @@ tags = {
     $NetworkInterface = Get-NetAdapter | Where-Object { $_.Status -eq "Up" }
     $NetworkInterface | Set-DnsClientServerAddress -ServerAddresses $DnsServers
 
-# Define domain and credential information
-$Domain = "labtest.com"
-$DomainUser = "admin"
-$DomainPassword = "P@ssword1qaz"
-
-# Provide the credentials for joining the domain
-$Credential = New-Object System.Management.Automation.PSCredential ($DomainUser, (ConvertTo-SecureString $DomainPassword -AsPlainText -Force))
-
-# Join the computer to the domain
-Add-Computer -DomainName $Domain -Credential $Credential -Restart
-
     
 </powershell>
 EOF
