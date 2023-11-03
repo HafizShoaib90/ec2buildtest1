@@ -35,6 +35,8 @@ tags = {
     $NetworkInterface = Get-NetAdapter | Where-Object { $_.Status -eq "Up" }
     $NetworkInterface | Set-DnsClientServerAddress -ServerAddresses $DnsServers
 
+# Restart the instance to apply DNS changes
+    Restart-Computer -Force
     
 </powershell>
 EOF
